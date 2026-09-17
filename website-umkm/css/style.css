@@ -1,91 +1,498 @@
-body {
-  margin: 0;
-  color: #5a3545;
-  background: #fff5f8;
-  font-family: Arial, sans-serif;
-}
-
-.page {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-.hero {
-  padding: 36px;
-  color: white;
-  background: #c96f8f;
-  border-radius: 24px;
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.products {
-  padding-left: 1.2rem;
-}
-
-.products li {
-  margin-bottom: 18px;
-  padding: 18px;
-  background: #ffffff;
-  border-left: 5px solid #e8a0b8;
-  border-radius: 14px;
-}
-
-.products p {
-  margin-top: 6px;
-  line-height: 1.5;
-}
-
-button {
-  padding: 12px 18px;
-  color: #5a3545;
-  font-weight: 700;
-  cursor: pointer;
-  background: #ffd1df;
-  border: 0;
-  border-radius: 999px;
-}
-
-button:hover {
-  background: #f2a9bf;
-}
-
-/* Informasi toko */
-.store-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.store-info div {
-  padding: 20px;
-  background: #ffffff;
-  border-top: 5px solid #e8a0b8;
-  border-radius: 16px;
-}
-
-.store-info h3 {
-  margin-top: 0;
-}
-
-.store-info p {
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-/* Tampilan untuk HP */
-@media (max-width: 600px) {
-  .store-info {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 28px;
-  }
+* { 
+  box-sizing: border-box; 
+} 
+ 
+html { 
+  scroll-behavior: smooth; 
+} 
+ 
+body { 
+  margin: 0; 
+  font-family: Arial, sans-serif; 
+  background: #fff8fb; 
+  color: #59404d; 
+  line-height: 1.6; 
+} 
+ 
+img { 
+  max-width: 100%; 
+  display: block; 
+} 
+ 
+a { 
+  color: inherit; 
+} 
+ 
+.skip-link { 
+  position: absolute; 
+  top: -50px; 
+  left: 15px; 
+  padding: 10px 16px; 
+  background: #8b6aa8; 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 0 0 8px 8px; 
+  z-index: 100; 
+} 
+ 
+.skip-link:focus { 
+  top: 0; 
+} 
+ 
+.site-header { 
+  background: white; 
+  border-bottom: 1px solid #efd7e2; 
+  padding: 18px 0; 
+} 
+ 
+.header-inner { 
+  width: 90%; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+} 
+ 
+.brand { 
+  display: inline-block; 
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #8b6aa8; 
+  text-decoration: none; 
+  margin-right: 50px; 
+} 
+ 
+nav { 
+  display: inline-block; 
+} 
+ 
+nav a { 
+  display: inline-block; 
+  margin-right: 25px; 
+  color: #694f62; 
+  text-decoration: none; 
+  font-weight: 600; 
+} 
+ 
+nav a:hover, 
+nav a[aria-current="page"] { 
+  color: #9b78b8; 
+} 
+ 
+nav a:focus, 
+.brand:focus { 
+  outline: 3px solid #e8a8c5; 
+  outline-offset: 4px; 
+} 
+ 
+main { 
+  width: 90%; 
+  max-width: 1100px; 
+  margin: 0 auto; 
+} 
+ 
+section { 
+  margin-bottom: 70px; 
+} 
+ 
+h1, 
+h2, 
+h3 { 
+  color: #684d61; 
+} 
+ 
+h2 { 
+  font-size: 30px; 
+  margin-bottom: 25px; 
+} 
+ 
+.hero { 
+  margin-top: 45px; 
+  padding: 55px; 
+  background: #f8e8f0; 
+  border-radius: 25px; 
+  min-height: 390px; 
+} 
+ 
+.hero::after { 
+  content: ""; 
+  display: block; 
+  clear: both; 
+} 
+ 
+.hero > p:not(.eyebrow) { 
+  max-width: 560px; 
+  font-size: 17px; 
+} 
+ 
+.eyebrow { 
+  margin-bottom: 5px; 
+  color: #9b78b8; 
+  font-size: 13px; 
+  font-weight: bold; 
+  letter-spacing: 2px; 
+} 
+ 
+.hero h1 { 
+  margin-top: 5px; 
+  margin-bottom: 15px; 
+  font-size: 48px; 
+  color: #8b6aa8; 
+} 
+ 
+.hero img { 
+  float: right; 
+  width: 330px; 
+  height: 280px; 
+  object-fit: cover; 
+  margin: -180px 0 20px 40px; 
+  border-radius: 22px; 
+  border: 5px solid white; 
+  box-shadow: 0 10px 25px rgba(130, 90, 110, 0.12); 
+} 
+ 
+#promoButton { 
+  margin-top: 15px; 
+  padding: 12px 22px; 
+  border: none; 
+  border-radius: 25px; 
+  background: #9b78b8; 
+  color: white; 
+  font-size: 15px; 
+  cursor: pointer; 
+} 
+ 
+#promoButton:hover { 
+  background: #80609b; 
+} 
+ 
+#promoButton:focus { 
+  outline: 3px solid #e8a8c5; 
+  outline-offset: 3px; 
+} 
+ 
+.etalase { 
+  margin-bottom: 70px; 
+  text-align: center; 
+} 
+ 
+.etalase-label { 
+  margin-bottom: 5px; 
+  color: #b47d9b; 
+  font-size: 13px; 
+  font-weight: bold; 
+  letter-spacing: 2px; 
+} 
+ 
+.etalase h2 { 
+  margin-top: 5px; 
+  margin-bottom: 30px; 
+} 
+ 
+.etalase-list { 
+  margin: -10px; 
+  font-size: 0; 
+  text-align: center; 
+} 
+ 
+.etalase-item { 
+  display: inline-block; 
+  vertical-align: top; 
+  width: 31%; 
+  margin: 10px; 
+  overflow: hidden; 
+  background: white; 
+  border: 1px solid #efd7e2; 
+  border-radius: 20px; 
+  box-shadow: 0 8px 25px rgba(130, 90, 110, 0.08); 
+  font-size: 15px; 
+  text-align: left; 
+} 
+ 
+.etalase-item img { 
+  width: 100%; 
+  height: 360px; 
+  object-fit: cover; 
+} 
+ 
+.etalase-info { 
+  padding: 18px; 
+} 
+ 
+.etalase-info h3 { 
+  margin-top: 0; 
+  margin-bottom: 8px; 
+  color: #765582; 
+  font-size: 19px; 
+} 
+ 
+.etalase-info p { 
+  margin-top: 5px; 
+  margin-bottom: 8px; 
+} 
+ 
+.price { 
+  color: #9b5f83; 
+  font-weight: bold; 
+  font-size: 17px; 
+} 
+ 
+.product-list { 
+  font-size: 0; 
+  margin: -10px; 
+} 
+ 
+.product-card { 
+  display: inline-block; 
+  vertical-align: top; 
+  width: 46%; 
+  margin: 10px 1.5%; 
+  padding: 25px; 
+  background: white; 
+  border: 1px solid #efd7e2; 
+  border-radius: 18px; 
+  box-shadow: 0 6px 20px rgba(130, 90, 110, 0.06); 
+  font-size: 15px; 
+} 
+ 
+.product-card h3 { 
+  margin-top: 0; 
+  color: #8b6aa8; 
+} 
+ 
+.product-card p { 
+  margin-bottom: 0; 
+} 
+ 
+section[aria-labelledby="informasi-title"] { 
+  padding: 35px; 
+  background: #fdf0f6; 
+  border-radius: 20px; 
+} 
+ 
+section[aria-labelledby="informasi-title"] article { 
+  display: inline-block; 
+  vertical-align: top; 
+  width: 45%; 
+  margin-right: 4%; 
+} 
+ 
+section[aria-labelledby="informasi-title"] h3 { 
+  color: #8b6aa8; 
+  margin-bottom: 5px; 
+} 
+ 
+.site-footer { 
+  margin-top: 50px; 
+  padding: 25px; 
+  background: #8b6aa8; 
+  color: white; 
+  text-align: center; 
+} 
+ 
+.site-footer p { 
+  margin: 0; 
+} 
+ 
+.about-hero { 
+  padding: 70px 30px; 
+  text-align: center; 
+  background: #f8e8f0; 
+  border-radius: 25px; 
+  margin-top: 45px; 
+} 
+ 
+.about-label { 
+  margin-bottom: 8px; 
+  color: #b47d9b; 
+  font-size: 13px; 
+  font-weight: bold; 
+  letter-spacing: 2px; 
+} 
+ 
+.about-hero h1 { 
+  margin: 10px 0 15px; 
+  font-size: 42px; 
+  color: #8b6aa8; 
+} 
+ 
+.about-hero p:not(.about-label) { 
+  max-width: 650px; 
+  margin: 0 auto; 
+} 
+ 
+.about-story { 
+  padding: 20px 0; 
+} 
+ 
+.about-story::after { 
+  content: ""; 
+  display: block; 
+  clear: both; 
+} 
+ 
+.about-photo { 
+  float: left; 
+  width: 42%; 
+  margin-right: 6%; 
+} 
+ 
+.about-photo img { 
+  width: 100%; 
+  height: 330px; 
+  object-fit: cover; 
+  border-radius: 22px; 
+  border: 5px solid white; 
+  box-shadow: 0 10px 25px rgba(130, 90, 110, 0.1); 
+} 
+ 
+.about-text { 
+  float: left; 
+  width: 52%; 
+} 
+ 
+.about-text h2 { 
+  margin-top: 5px; 
+} 
+ 
+.about-values { 
+  text-align: center; 
+} 
+ 
+.about-values h2 { 
+  margin-top: 5px; 
+} 
+ 
+.value-list { 
+  font-size: 0; 
+  margin: -10px; 
+} 
+ 
+.value-card { 
+  display: inline-block; 
+  vertical-align: top; 
+  width: 30%; 
+  margin: 10px; 
+  padding: 25px 20px; 
+  background: white; 
+  border: 1px solid #efd7e2; 
+  border-radius: 18px; 
+  text-align: left; 
+  font-size: 15px; 
+} 
+ 
+.value-card span { 
+  color: #c58baa; 
+  font-size: 14px; 
+  font-weight: bold; 
+} 
+ 
+.value-card h3 { 
+  color: #8b6aa8; 
+  margin: 8px 0; 
+} 
+ 
+.about-products { 
+  text-align: center; 
+} 
+ 
+.about-products h2 { 
+  margin-top: 5px; 
+} 
+ 
+.product-tags { 
+  text-align: center; 
+} 
+ 
+.product-tags span { 
+  display: inline-block; 
+  margin: 6px; 
+  padding: 10px 17px; 
+  background: #f8e8f0; 
+  border: 1px solid #efd7e2; 
+  border-radius: 20px; 
+  color: #765582; 
+} 
+ 
+.about-location { 
+  text-align: center; 
+} 
+ 
+.location-box { 
+  padding: 40px; 
+  background: #fdf0f6; 
+  border-radius: 22px; 
+} 
+ 
+.location-box h2 { 
+  margin-top: 5px; 
+  color: #8b6aa8; 
+} 
+ 
+.location-box strong { 
+  color: #765582; 
+} 
+ 
+#kontak-singkat { 
+  margin-top: 50px; 
+  padding: 45px 35px; 
+  background: white; 
+  border: 1px solid #efd7e2; 
+  border-radius: 22px; 
+  text-align: center; 
+} 
+ 
+.contact-label { 
+  margin-bottom: 5px; 
+  color: #b47d9b; 
+  font-size: 13px; 
+  font-weight: bold; 
+  letter-spacing: 2px; 
+} 
+ 
+#kontak-singkat h2 { 
+  margin-top: 5px; 
+  margin-bottom: 15px; 
+  color: #8b6aa8; 
+} 
+ 
+#kontak-singkat > p:not(.contact-label) { 
+  max-width: 650px; 
+  margin: 0 auto 30px; 
+} 
+ 
+#kontak-singkat article { 
+  display: inline-block; 
+  vertical-align: top; 
+  width: 30%; 
+  min-height: 190px; 
+  margin: 10px 1%; 
+  padding: 25px; 
+  background: #fdf0f6; 
+  border-radius: 18px; 
+  text-align: left; 
+} 
+ 
+#kontak-singkat article h3 { 
+  margin-top: 0; 
+  margin-bottom: 15px; 
+  color: #8b6aa8; 
+  font-size: 20px; 
+} 
+ 
+#kontak-singkat article p { 
+  margin-bottom: 18px; 
+} 
+ 
+#kontak-singkat a { 
+  color: #8b6aa8; 
+  font-weight: bold; 
+  text-decoration: none; 
+} 
+ 
+#kontak-singkat a:hover { 
+  text-decoration: underline; 
+} 
+ 
+#kontak-singkat a:focus { 
+  outline: 3px solid #e8a8c5; 
+  outline-offset: 3px; 
 }

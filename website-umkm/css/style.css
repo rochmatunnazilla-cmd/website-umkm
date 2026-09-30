@@ -1,7 +1,27 @@
-/* ==================================================
-   DASAR / RESET
-   Digunakan oleh seluruh halaman website
-================================================== */
+/* DASAR / RESET
+   Digunakan oleh seluruh halaman website */
+
+:root {
+  --color-primary: #8b6aa8;
+  --color-primary-hover: #80609b;
+  --color-text: #59404d;
+  --color-background: #fff8fb;
+  --color-pink: #f8e8f0;
+  --color-light-pink: #fdf0f6;
+  --color-border: #efd7e2;
+  --color-form-border: #d9a5b5;
+  --color-focus: #e8a8c5;
+
+  --spacing-small: 8px;
+  --spacing-medium: 15px;
+  --spacing-large: 25px;
+
+  --radius-small: 8px;
+  --radius-medium: 18px;
+  --radius-large: 25px;
+
+  --card-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
+}
 
 * {
   box-sizing: border-box;
@@ -14,13 +34,14 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff8fb;
-  color: #59404d;
+  background: var(--color-background);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -28,21 +49,18 @@ a {
   color: inherit;
 }
 
-
-/* ==================================================
-   AKSESIBILITAS
-   Skip link untuk langsung menuju konten utama
-================================================== */
+/* AKSESIBILITAS
+   Skip link untuk langsung menuju konten utama */
 
 .skip-link {
   position: absolute;
   top: -50px;
   left: 15px;
   padding: 10px 16px;
-  background: #8b6aa8;
+  background: var(--color-primary);
   color: white;
   text-decoration: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--radius-small) var(--radius-small);
   z-index: 100;
 }
 
@@ -50,15 +68,17 @@ a {
   top: 0;
 }
 
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
 
-/* ==================================================
-   HEADER & NAVIGASI
-   Digunakan pada semua halaman website
-================================================== */
+/* HEADER & NAVIGASI
+   Digunakan pada semua halaman website */
 
 .site-header {
   background: white;
-  border-bottom: 1px solid #efd7e2;
+  border-bottom: 1px solid var(--color-border);
   padding: 18px 0;
 }
 
@@ -75,7 +95,7 @@ a {
   display: inline-block;
   font-size: 24px;
   font-weight: bold;
-  color: #8b6aa8;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -99,15 +119,12 @@ nav a[aria-current="page"] {
 
 nav a:focus,
 .brand:focus {
-  outline: 3px solid #e8a8c5;
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 
-
-/* ==================================================
-   LAYOUT UTAMA
-   Digunakan sebagai dasar isi semua halaman
-================================================== */
+/* LAYOUT UTAMA
+   Digunakan sebagai dasar isi semua halaman */
 
 main {
   width: 90%;
@@ -130,16 +147,13 @@ h2 {
   margin-bottom: 25px;
 }
 
-
-/* ==================================================
-   BERANDA / HOME
-================================================== */
+/* BERANDA / HOME */
 
 .hero {
   margin-top: 45px;
   padding: 55px;
-  background: #f8e8f0;
-  border-radius: 25px;
+  background: var(--color-pink);
+  border-radius: var(--radius-large);
   min-height: 390px;
 }
 
@@ -166,7 +180,7 @@ h2 {
   margin-top: 5px;
   margin-bottom: 15px;
   font-size: 48px;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 .hero img {
@@ -180,35 +194,29 @@ h2 {
   box-shadow: 0 10px 25px rgba(130, 90, 110, 0.12);
 }
 
-
-/* ==================================================
-   TOMBOL PROMO
-================================================== */
+/* TOMBOL PROMO */
 
 #promoButton {
   margin-top: 15px;
   padding: 12px 22px;
   border: none;
-  border-radius: 25px;
-  background: #9b78b8;
+  border-radius: var(--radius-large);
+  background: var(--color-primary);
   color: white;
   font-size: 15px;
   cursor: pointer;
 }
 
 #promoButton:hover {
-  background: #80609b;
+  background: var(--color-primary-hover);
 }
 
 #promoButton:focus {
-  outline: 3px solid #e8a8c5;
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
 
-
-/* ==================================================
-   ETALASE PRODUK
-================================================== */
+/* ETALASE PRODUK */
 
 .etalase {
   margin-bottom: 70px;
@@ -241,7 +249,7 @@ h2 {
   margin: 10px;
   overflow: hidden;
   background: white;
-  border: 1px solid #efd7e2;
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(130, 90, 110, 0.08);
   font-size: 15px;
@@ -276,10 +284,7 @@ h2 {
   font-size: 17px;
 }
 
-
-/* ==================================================
-   KARTU PRODUK UMUM
-================================================== */
+/* KARTU PRODUK UMUM */
 
 .product-list {
   font-size: 0;
@@ -293,29 +298,26 @@ h2 {
   margin: 10px 1.5%;
   padding: 25px;
   background: white;
-  border: 1px solid #efd7e2;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--card-shadow);
   font-size: 15px;
 }
 
 .product-card h3 {
   margin-top: 0;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 .product-card p {
   margin-bottom: 0;
 }
 
-
-/* ==================================================
-   INFORMASI
-================================================== */
+/* INFORMASI */
 
 section[aria-labelledby="informasi-title"] {
   padding: 35px;
-  background: #fdf0f6;
+  background: var(--color-light-pink);
   border-radius: 20px;
 }
 
@@ -327,21 +329,18 @@ section[aria-labelledby="informasi-title"] article {
 }
 
 section[aria-labelledby="informasi-title"] h3 {
-  color: #8b6aa8;
+  color: var(--color-primary);
   margin-bottom: 5px;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Hero halaman Tentang Kami
-================================================== */
+/* TENTANG KAMI
+   Hero halaman Tentang Kami */
 
 .about-hero {
   padding: 70px 30px;
   text-align: center;
-  background: #f8e8f0;
-  border-radius: 25px;
+  background: var(--color-pink);
+  border-radius: var(--radius-large);
   margin-top: 45px;
 }
 
@@ -356,7 +355,7 @@ section[aria-labelledby="informasi-title"] h3 {
 .about-hero h1 {
   margin: 10px 0 15px;
   font-size: 42px;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 .about-hero p:not(.about-label) {
@@ -364,11 +363,8 @@ section[aria-labelledby="informasi-title"] h3 {
   margin: 0 auto;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Cerita Usaha
-================================================== */
+/* TENTANG KAMI
+   Cerita Usaha */
 
 .about-story {
   padding: 20px 0;
@@ -404,19 +400,15 @@ section[aria-labelledby="informasi-title"] h3 {
   margin-top: 5px;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Nilai Usaha
-================================================== */
+/* TENTANG KAMI
+   Nilai Usaha */
 
 .about-values {
   text-align: center;
 }
 
-.about-values h2 {
-  margin-top: 5px;
-}
+/* TENTANG KAMI
+Nilai Usaha */
 
 .value-list {
   font-size: 0;
@@ -430,8 +422,8 @@ section[aria-labelledby="informasi-title"] h3 {
   margin: 10px;
   padding: 25px 20px;
   background: white;
-  border: 1px solid #efd7e2;
-  border-radius: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
   text-align: left;
   font-size: 15px;
 }
@@ -443,15 +435,12 @@ section[aria-labelledby="informasi-title"] h3 {
 }
 
 .value-card h3 {
-  color: #8b6aa8;
+  color: var(--color-primary);
   margin: 8px 0;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Produk
-================================================== */
+/* TENTANG KAMI
+Produk */
 
 .about-products {
   text-align: center;
@@ -469,17 +458,14 @@ section[aria-labelledby="informasi-title"] h3 {
   display: inline-block;
   margin: 6px;
   padding: 10px 17px;
-  background: #f8e8f0;
-  border: 1px solid #efd7e2;
+  background: var(--color-pink);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   color: #765582;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Lokasi
-================================================== */
+/* TENTANG KAMI
+Lokasi */
 
 .about-location {
   text-align: center;
@@ -487,30 +473,27 @@ section[aria-labelledby="informasi-title"] h3 {
 
 .location-box {
   padding: 40px;
-  background: #fdf0f6;
+  background: var(--color-light-pink);
   border-radius: 22px;
 }
 
 .location-box h2 {
   margin-top: 5px;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 .location-box strong {
   color: #765582;
 }
 
-
-/* ==================================================
-   TENTANG KAMI
-   Kontak Singkat
-================================================== */
+/* TENTANG KAMI
+Kontak Singkat */
 
 #kontak-singkat {
   margin-top: 50px;
   padding: 45px 35px;
   background: white;
-  border: 1px solid #efd7e2;
+  border: 1px solid var(--color-border);
   border-radius: 22px;
   text-align: center;
 }
@@ -526,7 +509,7 @@ section[aria-labelledby="informasi-title"] h3 {
 #kontak-singkat h2 {
   margin-top: 5px;
   margin-bottom: 15px;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 #kontak-singkat > p:not(.contact-label) {
@@ -541,15 +524,15 @@ section[aria-labelledby="informasi-title"] h3 {
   min-height: 190px;
   margin: 10px 1%;
   padding: 25px;
-  background: #fdf0f6;
-  border-radius: 18px;
+  background: var(--color-light-pink);
+  border-radius: var(--radius-medium);
   text-align: left;
 }
 
 #kontak-singkat article h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #8b6aa8;
+  color: var(--color-primary);
   font-size: 20px;
 }
 
@@ -558,7 +541,7 @@ section[aria-labelledby="informasi-title"] h3 {
 }
 
 #kontak-singkat a {
-  color: #8b6aa8;
+  color: var(--color-primary);
   font-weight: bold;
   text-decoration: none;
 }
@@ -568,22 +551,19 @@ section[aria-labelledby="informasi-title"] h3 {
 }
 
 #kontak-singkat a:focus {
-  outline: 3px solid #e8a8c5;
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
 
-
-/* ==================================================
-   PRODUK
-   Hero Produk
-================================================== */
+/* PRODUK
+Hero Produk */
 
 .page-hero {
   margin-top: 45px;
   padding: 35px;
   min-height: 280px;
-  background: #f8e8f0;
-  border-radius: 25px;
+  background: var(--color-pink);
+  border-radius: var(--radius-large);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -597,7 +577,7 @@ section[aria-labelledby="informasi-title"] h3 {
 .page-hero h1 {
   margin: 10px 0 15px;
   font-size: 42px;
-  color: #8b6aa8;
+  color: var(--color-primary);
   line-height: 1.2;
 }
 
@@ -616,11 +596,8 @@ section[aria-labelledby="informasi-title"] h3 {
   box-shadow: 0 10px 25px rgba(130, 90, 110, 0.12);
 }
 
-
-/* ==================================================
-   PRODUK
-   Kategori
-================================================== */
+/* PRODUK
+Kategori */
 
 .category-list {
   font-size: 0;
@@ -634,27 +611,24 @@ section[aria-labelledby="informasi-title"] h3 {
   margin: 10px 1.5%;
   padding: 22px;
   background: white;
-  border: 1px solid #efd7e2;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--card-shadow);
   font-size: 15px;
 }
 
 .category-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
-  color: #8b6aa8;
+  color: var(--color-primary);
 }
 
 .category-card p {
   margin-bottom: 0;
 }
 
-
-/* ==================================================
-   PRODUK
-   Grid Produk
-================================================== */
+/* PRODUK
+Grid Produk */
 
 .product-grid {
   font-size: 0;
@@ -669,9 +643,9 @@ section[aria-labelledby="informasi-title"] h3 {
   padding: 0;
   overflow: hidden;
   background: white;
-  border: 1px solid #efd7e2;
-  border-radius: 18px;
-  box-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--card-shadow);
   font-size: 15px;
   text-align: left;
 }
@@ -696,17 +670,14 @@ section[aria-labelledby="informasi-title"] h3 {
   display: inline-block;
   margin: 0 15px 5px;
   padding: 5px 9px;
-  background: #f8e8f0;
+  background: var(--color-pink);
   border-radius: 6px;
   color: #9b5f83;
   font-size: 14px;
 }
 
-
-/* ==================================================
-   PRODUK
-   Tabel Informasi Produk
-================================================== */
+/* PRODUK
+Tabel Informasi Produk */
 
 .table-wrapper {
   width: 100%;
@@ -717,7 +688,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  border: 1px solid #efd7e2;
+  border: 1px solid var(--color-border);
 }
 
 caption {
@@ -730,29 +701,26 @@ caption {
 th,
 td {
   padding: 12px 14px;
-  border: 1px solid #efd7e2;
+  border: 1px solid var(--color-border);
   text-align: left;
   font-size: 14px;
 }
 
 th {
-  background: #8b6aa8;
+  background: var(--color-primary);
   color: white;
 }
 
 td {
-  color: #59404d;
+  color: var(--color-text);
 }
 
 tbody tr:hover {
-  background: #fdf0f6;
+  background: var(--color-light-pink);
 }
 
-
-/* ==================================================
-   GALERI
-   Koleksi Produk
-================================================== */
+/* GALERI
+Koleksi Produk */
 
 .gallery-list {
   display: grid;
@@ -781,17 +749,14 @@ tbody tr:hover {
 
 .gallery-item figcaption {
   padding: 10px 13px;
-  background: #fdf0f6;
+  background: var(--color-light-pink);
   color: #765582;
   font-size: 12px;
   font-weight: bold;
 }
 
-
-/* ==================================================
-   GALERI
-   Hero
-================================================== */
+/* GALERI
+Hero */
 
 .gallery-hero {
   display: flex;
@@ -799,7 +764,7 @@ tbody tr:hover {
   padding: 0 0 0 35px;
   gap: 20px;
   min-height: 190px;
-  background: #f8e8f0;
+  background: var(--color-pink);
   border-radius: 15px;
   overflow: hidden;
   text-align: left;
@@ -843,11 +808,8 @@ tbody tr:hover {
   box-shadow: none;
 }
 
-
-/* ==================================================
-   GALERI
-   Judul Koleksi
-================================================== */
+/* GALERI
+Judul Koleksi */
 
 .section-heading {
   display: flex;
@@ -872,25 +834,22 @@ tbody tr:hover {
 .collection-count {
   flex-shrink: 0;
   padding: 8px 15px;
-  background: #f8e8f0;
+  background: var(--color-pink);
   border-radius: 20px;
   color: #9b78b8;
   font-size: 12px;
   font-weight: bold;
 }
 
-
-/* ==================================================
-   GALERI
-   Proses Pembuatan
-================================================== */
+/* GALERI
+Proses Pembuatan */
 
 .process-section {
   display: flex;
   align-items: center;
   gap: 25px;
   padding: 22px;
-  background: #fdf0f6;
+  background: var(--color-light-pink);
   border-radius: 15px;
 }
 
@@ -952,11 +911,8 @@ tbody tr:hover {
   font-size: 10px;
 }
 
-
-/* ==================================================
-   GALERI
-   Audio
-================================================== */
+/* GALERI
+Audio */
 
 .audio-section {
   display: grid;
@@ -964,7 +920,7 @@ tbody tr:hover {
   align-items: center;
   gap: 5px 25px;
   padding: 25px;
-  background: #fdf0f6;
+  background: var(--color-light-pink);
   border-radius: 15px;
   text-align: left;
 }
@@ -988,11 +944,8 @@ tbody tr:hover {
   max-width: none;
 }
 
-
-/* ==================================================
-   FOOTER
-   Digunakan pada seluruh halaman website
-================================================== */
+/* FOOTER
+Digunakan pada seluruh halaman website */
 
 .site-footer {
   margin-top: 30px;
@@ -1007,14 +960,10 @@ tbody tr:hover {
   font-size: 12px;
 }
 
-
-/* ==================================================
-   GALERI
-   Responsif Tablet
-================================================== */
+/* GALERI
+Responsif Tablet */
 
 @media (max-width: 800px) {
-
   .gallery-list {
     gap: 12px;
   }
@@ -1030,17 +979,12 @@ tbody tr:hover {
   .process-intro {
     margin-bottom: 20px;
   }
-
 }
 
-
-/* ==================================================
-   GALERI
-   Responsif HP
-================================================== */
+/* GALERI
+Responsif HP */
 
 @media (max-width: 600px) {
-
   .gallery-hero {
     display: block;
     padding: 25px;
@@ -1085,17 +1029,12 @@ tbody tr:hover {
   .audio-section audio {
     margin-top: 20px;
   }
-
 }
 
-
-/* ==================================================
-   GALERI
-   Responsif HP Kecil
-================================================== */
+/* GALERI
+Responsif HP Kecil */
 
 @media (max-width: 450px) {
-
   .gallery-list {
     grid-template-columns: 1fr;
   }
@@ -1103,13 +1042,9 @@ tbody tr:hover {
   .gallery-item img {
     height: 200px;
   }
-
 }
 
-
-/* ==================================================
-   PRODUK BARU
-================================================== */
+/* PRODUK BARU */
 
 .produk-list {
   display: flex;
@@ -1122,10 +1057,10 @@ tbody tr:hover {
   min-width: 0;
   margin: 0;
   background: #ffffff;
-  border: 1px solid #efd7e2;
-  border-radius: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
+  box-shadow: var(--card-shadow);
 }
 
 .produk-card img {
@@ -1160,11 +1095,7 @@ tbody tr:hover {
   font-weight: bold;
 }
 
-
-/* ==================================================
-   HALAMAN KONTAK
-================================================== */
-
+/* HALAMAN KONTAK */
 
 /* Isi utama halaman Kontak */
 
@@ -1177,16 +1108,12 @@ tbody tr:hover {
 .contact-page main section {
   margin-bottom: 30px;
 }
-
 .contact-page main section h2 {
   margin-bottom: 15px;
   color: #985b73;
 }
 
-
-/* ==================================================
-   FORMULIR KONTAK
-================================================== */
+/* FORMULIR KONTAK */
 
 .contact-page #contactForm {
   background-color: #fff7fa;
@@ -1194,7 +1121,6 @@ tbody tr:hover {
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
 
 /* Kolom Form */
 
@@ -1210,6 +1136,7 @@ tbody tr:hover {
 
 .contact-page input[type="text"],
 .contact-page input[type="email"],
+.contact-page input[type="tel"],
 .contact-page select,
 .contact-page textarea {
   width: 100%;
@@ -1221,14 +1148,13 @@ tbody tr:hover {
   font-size: 14px;
 }
 
-
 /* Pilihan Metode Kontak */
 
 .contact-page fieldset {
   margin-bottom: 20px;
   padding: 15px;
-  border: 1px solid #d9a5b5;
-  border-radius: 8px;
+  border: 1px solid var(--color-border-form);
+  border-radius: var(--radius-small);
 }
 
 .contact-page fieldset legend {
@@ -1247,20 +1173,24 @@ tbody tr:hover {
   margin-right: 5px;
 }
 
-
 /* Tombol Kirim */
 
 .contact-page button[type="submit"] {
   padding: 12px 25px;
-  background-color: #9b78b8;
+  background-color: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-small);
   font-size: 15px;
   cursor: pointer;
 }
 
-/*preview*/
+.contact-page button[type="submit"]:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Preview Form */
+
 .field {
   margin-bottom: 16px;
 }
@@ -1278,5 +1208,6 @@ fieldset {
   padding: 16px;
   white-space: pre-wrap;
   background: white;
-  border: 1px solid #dccbbc;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
 }

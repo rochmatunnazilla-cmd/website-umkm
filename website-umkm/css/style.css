@@ -1,6 +1,5 @@
 /* DASAR / RESET
    Digunakan oleh seluruh halaman website */
-
 :root {
   --color-primary: #8b6aa8;
   --color-primary-hover: #80609b;
@@ -11,15 +10,12 @@
   --color-border: #efd7e2;
   --color-form-border: #d9a5b5;
   --color-focus: #e8a8c5;
-
   --spacing-small: 8px;
   --spacing-medium: 15px;
   --spacing-large: 25px;
-
   --radius-small: 8px;
   --radius-medium: 18px;
   --radius-large: 25px;
-
   --card-shadow: 0 6px 20px rgba(130, 90, 110, 0.06);
 }
 
@@ -49,9 +45,9 @@ a {
   color: inherit;
 }
 
+
 /* AKSESIBILITAS
    Skip link untuk langsung menuju konten utama */
-
 .skip-link {
   position: absolute;
   top: -50px;
@@ -73,9 +69,9 @@ a {
   outline-offset: 3px;
 }
 
+
 /* HEADER & NAVIGASI
    Digunakan pada semua halaman website */
-
 .site-header {
   background: white;
   border-bottom: 1px solid var(--color-border);
@@ -123,9 +119,9 @@ nav a:focus,
   outline-offset: 4px;
 }
 
+
 /* LAYOUT UTAMA
    Digunakan sebagai dasar isi semua halaman */
-
 main {
   width: 90%;
   max-width: 1100px;
@@ -147,23 +143,27 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* BERANDA / HOME */
 
+/* BERANDA / HOME */
 .hero {
   margin-top: 45px;
   padding: 55px;
   background: var(--color-pink);
   border-radius: var(--radius-large);
   min-height: 390px;
+
+  /* P06 - Grid */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-large);
+  align-items: center;
 }
 
-.hero::after {
-  content: "";
-  display: block;
-  clear: both;
+.hero-content {
+  min-width: 0;
 }
 
-.hero > p:not(.eyebrow) {
+.hero-content > p:not(.eyebrow) {
   max-width: 560px;
   font-size: 17px;
 }
@@ -183,19 +183,18 @@ h2 {
   color: var(--color-primary);
 }
 
-.hero img {
-  float: right;
-  width: 330px;
+.hero-image {
+  width: 100%;
   height: 280px;
   object-fit: cover;
-  margin: -180px 0 20px 40px;
-  border-radius: 22px;
+  margin: 0;
+  border-radius: var(--radius-medium);
   border: 5px solid white;
   box-shadow: 0 10px 25px rgba(130, 90, 110, 0.12);
 }
 
-/* TOMBOL PROMO */
 
+/* TOMBOL PROMO */
 #promoButton {
   margin-top: 15px;
   padding: 12px 22px;
@@ -216,8 +215,8 @@ h2 {
   outline-offset: 3px;
 }
 
-/* ETALASE PRODUK */
 
+/* ETALASE PRODUK */
 .etalase {
   margin-bottom: 70px;
   text-align: center;
@@ -284,8 +283,8 @@ h2 {
   font-size: 17px;
 }
 
-/* KARTU PRODUK UMUM */
 
+/* KARTU PRODUK UMUM */
 .product-list {
   font-size: 0;
   margin: -10px;
@@ -313,8 +312,8 @@ h2 {
   margin-bottom: 0;
 }
 
-/* INFORMASI */
 
+/* INFORMASI */
 section[aria-labelledby="informasi-title"] {
   padding: 35px;
   background: var(--color-light-pink);
@@ -333,9 +332,9 @@ section[aria-labelledby="informasi-title"] h3 {
   margin-bottom: 5px;
 }
 
+
 /* TENTANG KAMI
    Hero halaman Tentang Kami */
-
 .about-hero {
   padding: 70px 30px;
   text-align: center;
@@ -363,9 +362,9 @@ section[aria-labelledby="informasi-title"] h3 {
   margin: 0 auto;
 }
 
+
 /* TENTANG KAMI
    Cerita Usaha */
-
 .about-story {
   padding: 20px 0;
 }
@@ -400,15 +399,12 @@ section[aria-labelledby="informasi-title"] h3 {
   margin-top: 5px;
 }
 
+
 /* TENTANG KAMI
    Nilai Usaha */
-
 .about-values {
   text-align: center;
 }
-
-/* TENTANG KAMI
-Nilai Usaha */
 
 .value-list {
   font-size: 0;
@@ -439,9 +435,9 @@ Nilai Usaha */
   margin: 8px 0;
 }
 
+
 /* TENTANG KAMI
 Produk */
-
 .about-products {
   text-align: center;
 }
@@ -464,9 +460,9 @@ Produk */
   color: #765582;
 }
 
+
 /* TENTANG KAMI
 Lokasi */
-
 .about-location {
   text-align: center;
 }
@@ -486,9 +482,9 @@ Lokasi */
   color: #765582;
 }
 
+
 /* TENTANG KAMI
 Kontak Singkat */
-
 #kontak-singkat {
   margin-top: 50px;
   padding: 45px 35px;
@@ -555,9 +551,9 @@ Kontak Singkat */
   outline-offset: 3px;
 }
 
+
 /* PRODUK
 Hero Produk */
-
 .page-hero {
   margin-top: 45px;
   padding: 35px;
@@ -596,9 +592,9 @@ Hero Produk */
   box-shadow: 0 10px 25px rgba(130, 90, 110, 0.12);
 }
 
+
 /* PRODUK
 Kategori */
-
 .category-list {
   font-size: 0;
   margin: -10px;
@@ -627,48 +623,55 @@ Kategori */
   margin-bottom: 0;
 }
 
+
 /* PRODUK
 Grid Produk */
-
 .product-grid {
-  font-size: 0;
-  margin: -10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-medium);
 }
 
 .product-grid .product-card {
-  display: inline-block;
-  vertical-align: top;
-  width: 30%;
-  margin: 10px 1.5%;
-  padding: 0;
-  overflow: hidden;
-  background: white;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
-  box-shadow: var(--card-shadow);
-  font-size: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 0;
+  padding: 25px;
+  padding-top: 68px;
+  overflow: visible;
   text-align: left;
 }
 
-.product-grid .product-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+.product-badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 0.25rem var(--spacing-small);
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 800;
+  background: #fef3c7;
+  border-radius: 999px;
 }
 
 .product-grid .product-card h3 {
-  margin: 15px 15px 8px;
+  margin-top: 15px;
+  margin-bottom: 8px;
   color: #765582;
   font-size: 18px;
 }
 
 .product-grid .product-card p {
-  margin: 8px 15px 15px;
+  margin: 8px 0 15px;
 }
 
 .product-grid .product-card .price {
   display: inline-block;
-  margin: 0 15px 5px;
+  width: fit-content;
+  margin-top: auto;
+  margin-bottom: 15px;
   padding: 5px 9px;
   background: var(--color-pink);
   border-radius: 6px;
@@ -676,9 +679,17 @@ Grid Produk */
   font-size: 14px;
 }
 
+.card-actions {
+  display: flex;
+  gap: var(--spacing-small);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+
 /* PRODUK
 Tabel Informasi Produk */
-
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -719,13 +730,13 @@ tbody tr:hover {
   background: var(--color-light-pink);
 }
 
+
 /* GALERI
 Koleksi Produk */
-
-.gallery-list {
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-medium);
   margin: 0;
   font-size: initial;
 }
@@ -743,8 +754,8 @@ Koleksi Produk */
 
 .gallery-item img {
   width: 100%;
-  height: 170px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .gallery-item figcaption {
@@ -755,14 +766,15 @@ Koleksi Produk */
   font-weight: bold;
 }
 
+
 /* GALERI
 Hero */
-
 .gallery-hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 40%;
   align-items: center;
   padding: 0 0 0 35px;
-  gap: 20px;
+  gap: var(--spacing-medium);
   min-height: 190px;
   background: var(--color-pink);
   border-radius: 15px;
@@ -771,7 +783,7 @@ Hero */
 }
 
 .gallery-hero-text {
-  flex: 1;
+  min-width: 0;
   padding: 25px 0;
 }
 
@@ -800,7 +812,7 @@ Hero */
 }
 
 .gallery-hero-image {
-  width: 40%;
+  width: 100%;
   height: 190px;
   object-fit: cover;
   border: none;
@@ -808,14 +820,14 @@ Hero */
   box-shadow: none;
 }
 
+
 /* GALERI
 Judul Koleksi */
-
 .section-heading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--spacing-medium);
   margin-bottom: 20px;
 }
 
@@ -841,13 +853,13 @@ Judul Koleksi */
   font-weight: bold;
 }
 
+
 /* GALERI
 Proses Pembuatan */
-
 .process-section {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: var(--spacing-large);
   padding: 22px;
   background: var(--color-light-pink);
   border-radius: 15px;
@@ -871,9 +883,9 @@ Proses Pembuatan */
 
 .process-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   flex: 1;
-  gap: 10px;
+  gap: var(--spacing-small);
 }
 
 .process-item {
@@ -911,14 +923,14 @@ Proses Pembuatan */
   font-size: 10px;
 }
 
+
 /* GALERI
 Audio */
-
 .audio-section {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   align-items: center;
-  gap: 5px 25px;
+  gap: var(--spacing-small) var(--spacing-large);
   padding: 25px;
   background: var(--color-light-pink);
   border-radius: 15px;
@@ -944,9 +956,9 @@ Audio */
   max-width: none;
 }
 
+
 /* FOOTER
 Digunakan pada seluruh halaman website */
-
 .site-footer {
   margin-top: 30px;
   padding: 20px;
@@ -960,92 +972,8 @@ Digunakan pada seluruh halaman website */
   font-size: 12px;
 }
 
-/* GALERI
-Responsif Tablet */
-
-@media (max-width: 800px) {
-  .gallery-list {
-    gap: 12px;
-  }
-
-  .gallery-item img {
-    height: 140px;
-  }
-
-  .process-section {
-    display: block;
-  }
-
-  .process-intro {
-    margin-bottom: 20px;
-  }
-}
-
-/* GALERI
-Responsif HP */
-
-@media (max-width: 600px) {
-  .gallery-hero {
-    display: block;
-    padding: 25px;
-  }
-
-  .gallery-hero-text {
-    padding: 0;
-  }
-
-  .gallery-hero h1 {
-    font-size: 28px;
-  }
-
-  .gallery-hero-image {
-    width: 100%;
-    height: 180px;
-    margin-top: 15px;
-  }
-
-  .gallery-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .gallery-item img {
-    height: 140px;
-  }
-
-  .process-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .process-item img {
-    height: 120px;
-  }
-
-  .audio-section {
-    display: block;
-  }
-
-  .audio-section audio {
-    margin-top: 20px;
-  }
-}
-
-/* GALERI
-Responsif HP Kecil */
-
-@media (max-width: 450px) {
-  .gallery-list {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item img {
-    height: 200px;
-  }
-}
 
 /* PRODUK BARU */
-
 .produk-list {
   display: flex;
   gap: 20px;
@@ -1095,10 +1023,9 @@ Responsif HP Kecil */
   font-weight: bold;
 }
 
+
 /* HALAMAN KONTAK */
-
 /* Isi utama halaman Kontak */
-
 .contact-page main {
   max-width: 900px;
   margin: 0 auto;
@@ -1108,13 +1035,14 @@ Responsif HP Kecil */
 .contact-page main section {
   margin-bottom: 30px;
 }
+
 .contact-page main section h2 {
   margin-bottom: 15px;
   color: #985b73;
 }
 
-/* FORMULIR KONTAK */
 
+/* FORMULIR KONTAK */
 .contact-page #contactForm {
   background-color: #fff7fa;
   padding: 30px;
@@ -1122,8 +1050,8 @@ Responsif HP Kecil */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Kolom Form */
 
+/* Kolom Form */
 .contact-page .field {
   margin-bottom: 20px;
 }
@@ -1148,8 +1076,8 @@ Responsif HP Kecil */
   font-size: 14px;
 }
 
-/* Pilihan Metode Kontak */
 
+/* Pilihan Metode Kontak */
 .contact-page fieldset {
   margin-bottom: 20px;
   padding: 15px;
@@ -1173,8 +1101,8 @@ Responsif HP Kecil */
   margin-right: 5px;
 }
 
-/* Tombol Kirim */
 
+/* Tombol Kirim */
 .contact-page button[type="submit"] {
   padding: 12px 25px;
   background-color: var(--color-primary);
@@ -1189,8 +1117,8 @@ Responsif HP Kecil */
   background-color: var(--color-primary-hover);
 }
 
-/* Preview Form */
 
+/* Preview Form */
 .field {
   margin-bottom: 16px;
 }
